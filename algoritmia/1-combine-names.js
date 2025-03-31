@@ -7,8 +7,9 @@
  * @returns {string} Devuelve un string que son los dos nombres contactenados separados por un espacio 
  */
 
-function combineNames(name1, name2) {
-
+function combineNames(name1, name2) { 
+    let combinedName = `${name1} ${name2}`;
+    return combinedName;
 }
 
 console.log(combineNames('James', 'Stevens')); // "James Stevens"

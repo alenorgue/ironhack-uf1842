@@ -12,7 +12,13 @@
  */
 
 function filterProgrammingLanguages(languages, minYears) {
-
+    var result = [];
+    for (var i = 0; i < languages.length; i++) {
+        if (languages[i].years >= minYears) { 
+            result.push(languages[i].name)
+        }
+    }
+    return result;
 }
 
 // Caso 1: Candidata con suficientes años de experiencia en algunos lenguajes

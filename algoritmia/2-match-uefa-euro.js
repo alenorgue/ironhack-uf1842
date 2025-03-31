@@ -2,13 +2,23 @@
  * Disponemos de una función que debe formatear un string, en función del resultado de un partido de fútbol (es para una página Web deportiva). 
  * 
  * 
- * @param {array<string>} scores Los competidores del partido, en un array de strings, siempre de dos posiciones
- * @param {array<number>} teams Las goles que han metido cada equipo, respectivamente.
+ * @param {array<string>} teams Los competidores del partido, en un array de strings, siempre de dos posiciones
+ * @param {array<number>} scores Las goles que han metido cada equipo, respectivamente.
  * 
  * @returns {string} Resultado del partido, siguiendo el formato indicado en los comentarios, según si ha ganado el primer equipo, el segundo, o ha habido empate.   
 */
 function uefaEuro2016(teams, scores) {
-
+    let winner = '';
+    
+    if (scores[0] > scores[1]) {
+        winner = `${teams[0]} won!`;
+    } else if (scores[0] < scores[1]) {
+        winner = `${teams[1]} won!`;
+    } else {
+        winner = 'teams played draw.';
+    }
+    
+    return `At match ${teams[0]} - ${teams[1]}, ${winner}`;
 }
 
 console.log(uefaEuro2016(['Germany', 'Ukraine'], [2, 0])) // "At match Germany - Ukraine, Germany won!"
